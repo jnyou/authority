@@ -1,0 +1,8 @@
+POST http://localhost:8888/permissionManager/product/queryAll
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-11-23T092954.200.html
+
+###
+
