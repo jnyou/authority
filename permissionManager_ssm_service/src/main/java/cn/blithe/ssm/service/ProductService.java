@@ -4,6 +4,7 @@ import cn.blithe.ssm.pojo.Product;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName ProductService
@@ -31,4 +32,13 @@ public interface ProductService {
      * @Return: void
      **/
     void save(Product product) throws Exception;
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 批量删除
+     * @Date: 2019/11/25
+     * @Param: [id]
+     * @Return: int
+     **/
+    int batchDelete(Object[] id) throws Exception;
 }

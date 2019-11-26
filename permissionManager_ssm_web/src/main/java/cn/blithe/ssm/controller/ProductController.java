@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName ProductController
@@ -53,6 +55,26 @@ public class ProductController {
     public String save(Product product) throws Exception {
         productService.save(product);
         return "redirect:queryAll";
+    }
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 删除和批量删除
+     * @Date: 2019/11/26
+     * @Param: [idStrs]
+     * @Return: java.util.Map<java.lang.String,java.lang.Object>
+     **/
+    @RequestMapping("/delete")
+    @ResponseBody
+    public String bacthDelete(String idStrs) throws Exception {
+        String[] str = idStrs.split(",");
+        try {
+            //批量删除
+            productService.batchDelete(str);//删除的方法
+        } catch (Exception e) {
+            return "error";
+        }
+        return "ok";
     }
 
 }

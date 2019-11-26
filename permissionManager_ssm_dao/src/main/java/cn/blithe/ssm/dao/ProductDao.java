@@ -1,10 +1,12 @@
 package cn.blithe.ssm.dao;
 
 import cn.blithe.ssm.pojo.Product;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName ProductDao
@@ -13,7 +15,6 @@ import java.util.List;
  * @Date 2019/11/23 14:35
  * @Version 1.0
  **/
-
 public interface ProductDao {
 
     /**
@@ -35,4 +36,13 @@ public interface ProductDao {
      **/
     @Insert("insert into product(productNum,productName,cityName,departureTime,productPrice,productDesc,productStatus) values (#{productNum},#{productName},#{cityName},#{departureTime},#{productPrice},#{productDesc},#{productStatus})")
     void save(Product product) throws Exception;
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 批量删除
+     * @Date: 2019/11/25
+     * @Param: [id]
+     * @Return: int
+     **/
+    int batchDelete(Object[] id);
 }

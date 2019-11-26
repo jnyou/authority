@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName Product
@@ -32,4 +34,11 @@ public class ProductServiceImpl implements ProductService {
     public void save(Product product) throws Exception {
         productDao.save(product);
     }
+
+    @Override
+    public int batchDelete(Object[] id) throws Exception {
+        return productDao.batchDelete(id);
+    }
+
+
 }
