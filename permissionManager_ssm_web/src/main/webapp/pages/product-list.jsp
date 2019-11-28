@@ -166,7 +166,7 @@
 			<!-- 内容头部 -->
 			<section class="content-header">
 				<h1>
-					数据管理 <small>数据列表</small>
+					产品管理 <small>数据列表</small>
 				</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
@@ -201,13 +201,13 @@
 										<button type="button" class="btn btn-default" title="删除" onclick="del();">
 											<i class="fa fa-trash-o"></i> 删除
 										</button>
-										<button type="button" class="btn btn-default" title="开启">
+										<button type="button" class="btn btn-default" title="开启" onclick="opens();">
 											<i class="fa fa-check"></i> 开启
 										</button>
-										<button type="button" class="btn btn-default" title="屏蔽">
+										<button type="button" class="btn btn-default" title="屏蔽" onclick="closes();">
 											<i class="fa fa-ban"></i> 屏蔽
 										</button>
-										<button type="button" class="btn btn-default" title="刷新">
+										<button type="button" class="btn btn-default" title="刷新" onclick="refresh();">
 											<i class="fa fa-refresh"></i> 刷新
 										</button>
 									</div>
@@ -255,11 +255,11 @@
 											<td>${product.departureTimeStr }</td>
 											<td class="text-center">${product.productPrice }</td>
 											<td>${product.productDesc }</td>
-											<td class="text-center">${product.productStatusStr }</td>
+											<td class="text-center" id="statusStr">${product.productStatusStr }</td>
 											<td class="text-center">
 												<button type="button" class="btn bg-olive btn-xs">订单</button>
 												<button type="button" class="btn bg-olive btn-xs">详情</button>
-												<button type="button" class="btn bg-olive btn-xs">编辑</button>
+												<a class="btn bg-olive btn-xs" href="${pageContext.request.contextPath}/product/edit?id=${product.id}">编辑</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -472,6 +472,8 @@
 			});
 		});
 
+
+		//删除
 		function del() {
 			var idStrs = "";
 			var inputs = $("#dataList td input[type='checkbox']");
@@ -503,6 +505,83 @@
 					});
 				})
 			}
+		}
+
+		// 开启 / 关闭
+		function opens() {
+			var statusID = "";
+			var inputs = $("#dataList td input[type='checkbox']");
+			for(var i =0;i<inputs.length;i++){
+				var check = $("#dataList td input[type='checkbox']")[i].checked; //选中的
+				if(check){
+					var sta = $("#dataList #statusStr")[i].innerText;
+					if(sta == "关闭"){
+                        var ids = $("#dataList #ids")[i].innerText;
+                        statusID = statusID + ids + ",";
+					}
+				}
+			}
+			if(statusID == ""){
+				alert('请选择有效数据');
+				return false;
+			}else{
+                Ewin.confirm({ message: "确认要开启数据吗？" }).on(function (e) {
+                    $.ajax({
+                        url:'${pageContext.request.contextPath}/product/open',
+                        type:'POST', //GET
+                        data:{
+							statusID:statusID
+                        },
+                        success:function(data){
+                            if(data=="ok"){
+                                alert('开启数据成功');
+                                //删除成功后，调用action方法刷新页面信息
+                                location.reload();
+                            }
+                        }
+                    });
+                })
+			}
+		}
+
+		function closes() {
+			var statusID = "";
+			var inputs = $("#dataList td input[type='checkbox']");
+			for(var i =0;i<inputs.length;i++){
+				var check = $("#dataList td input[type='checkbox']")[i].checked; //选中的
+				if(check){
+					var sta = $("#dataList #statusStr")[i].innerText;
+					if(sta == "开启"){
+						var ids = $("#dataList #ids")[i].innerText;
+						statusID = statusID + ids + ",";
+					}
+				}
+			}
+			if(statusID == ""){
+				alert('请选择有效数据');
+				return false;
+			}else{
+				Ewin.confirm({ message: "确认要关闭数据吗？" }).on(function (e) {
+					$.ajax({
+						url:'${pageContext.request.contextPath}/product/close',
+						type:'POST', //GET
+						data:{
+							statusID:statusID
+						},
+						success:function(data){
+							if(data=="ok"){
+								alert('开启数据成功');
+								//删除成功后，调用action方法刷新页面信息
+								location.reload();
+							}
+						}
+					});
+				})
+			}
+		}
+
+		function refresh() {
+			location.reload();
 		}
 
 	</script>

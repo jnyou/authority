@@ -41,4 +41,22 @@ public interface ProductService {
      * @Return: int
      **/
     int batchDelete(Object[] id) throws Exception;
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 查询单条数据
+     * @Date: 2019/11/28
+     * @Param: [id]
+     * @Return: cn.blithe.ssm.pojo.Product
+     **/
+    Product queryProductById(String id);
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 修改
+     * @Date: 2019/11/28
+     * @Param: [product]
+     * @Return: java.lang.Integer
+     **/
+    Integer update(Product product);
 }

@@ -45,4 +45,23 @@ public interface ProductDao {
      * @Return: int
      **/
     int batchDelete(Object[] id);
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 查出单条数据
+     * @Date: 2019/11/28
+     * @Param: [id]
+     * @Return: cn.blithe.ssm.pojo.Product
+     **/
+    Product queryProductById(String id);
+
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 修改
+     * @Date: 2019/11/28
+     * @Param: [product]
+     * @Return: java.lang.Integer
+     **/
+    Integer update(Product product);
 }

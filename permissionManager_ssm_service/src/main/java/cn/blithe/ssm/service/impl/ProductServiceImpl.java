@@ -40,5 +40,15 @@ public class ProductServiceImpl implements ProductService {
         return productDao.batchDelete(id);
     }
 
+    @Override
+    public Product queryProductById(String id) {
+        return productDao.queryProductById(id);
+    }
+
+    @Override
+    public Integer update(Product product) {
+        return productDao.update(product);
+    }
+
 
 }

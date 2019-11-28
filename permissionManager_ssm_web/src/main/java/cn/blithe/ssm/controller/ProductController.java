@@ -5,6 +5,7 @@ import cn.blithe.ssm.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -30,7 +31,7 @@ public class ProductController {
 
     /**
      * @Author: nankexiansheng
-     * @Description: 
+     * @Description:
      * @Date: 2019/11/23
      * @Param: []
      * @Return: org.springframework.web.servlet.ModelAndView
@@ -39,7 +40,7 @@ public class ProductController {
     public ModelAndView queryAllProduct() throws Exception {
         ModelAndView model = new ModelAndView();
         List<Product> products = productService.queryProductList();
-        model.addObject("productList",products);
+        model.addObject("productList", products);
         model.setViewName("product-list");
         return model;
     }
@@ -51,7 +52,7 @@ public class ProductController {
      * @Param: [product]
      * @Return: void
      **/
-    @RequestMapping(value = "/save",method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String save(Product product) throws Exception {
         productService.save(product);
         return "redirect:queryAll";
@@ -62,7 +63,7 @@ public class ProductController {
      * @Description: 删除和批量删除
      * @Date: 2019/11/26
      * @Param: [idStrs]
-     * @Return: java.util.Map<java.lang.String,java.lang.Object>
+     * @Return: java.util.Map<java.lang.String, java.lang.Object>
      **/
     @RequestMapping("/delete")
     @ResponseBody
@@ -77,4 +78,59 @@ public class ProductController {
         return "ok";
     }
 
+    /**
+     * @Author: nankexiansheng
+     * @Description: 开启
+     * @Date: 2019/11/28
+     * @Param: [statusid]
+     * @Return: java.lang.String
+     **/
+    @RequestMapping("/open")
+    @ResponseBody
+    public String open(String statusID) throws Exception {
+        String[] str = statusID.split(",");
+        try {
+            for (int i = 0; i < str.length; i++) {
+                Product pro = productService.queryProductById(str[i]);
+                pro.setProductStatus(1);
+                productService.update(pro);
+            }
+        } catch (Exception e) {
+            return "error";
+        }
+        return "ok";
+    }
+
+    @ResponseBody
+    @RequestMapping("/close")
+    public String close(String statusID) throws Exception {
+        String[] arr = statusID.split(",");
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                Product pro = productService.queryProductById(arr[i]);
+                pro.setProductStatus(0);
+                productService.update(pro);
+            }
+        } catch (Exception e) {
+            return "error";
+        }
+        return "ok";
+    }
+
+    @RequestMapping("/edit")
+    public String edit(String id,Model model) {
+        if(!id.isEmpty()){
+            Product pro = productService.queryProductById(id);
+            model.addAttribute("productList",pro);
+            return "product-add";
+        }else{
+            return "redirect:queryAll";
+        }
+    }
+
+    @RequestMapping("/edit")
+    public String update(Product product) {
+        Integer effectNum = productService.update(product);
+        return "redirect:queryAll";
+    }
 }
