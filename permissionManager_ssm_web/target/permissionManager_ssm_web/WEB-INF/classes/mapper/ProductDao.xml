@@ -9,4 +9,21 @@
             #{id}
         </foreach>
     </delete>
+
+    <select id="queryProductById" resultType="cn.blithe.ssm.pojo.Product">
+        select * from product where id = #{id}
+    </select>
+
+    <update id="update" parameterType="cn.blithe.ssm.pojo.Product">
+       update product
+        set
+        <if test="productName != null">productName = #{productName},</if>
+        <if test="cityName != null">cityName = #{cityName},</if>
+        <if test="departureTime != null">departureTime = #{departureTime},</if>
+        <if test="productPrice != null">productPrice = #{productPrice},</if>
+        <if test="productDesc != null">productDesc = #{productDesc},</if>
+        <if test="productStatus != null">productStatus = #{productStatus}</if>
+        where
+        id = #{id}
+    </update>
 </mapper>

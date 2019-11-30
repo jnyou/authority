@@ -29,5 +29,21 @@ public interface OrdersDao {
 //            @Result(property = "orderDesc",column = "orderDesc"),
 //            @Result(property = "product",column = "productId",javaType = Product.class,one = @One(select = "com.itheima.ssm.dao.IProductDao.findById")),
 //    })
+    /**
+     * @Author: nankexiansheng
+     * @Description: 订单列表
+     * @Date: 2019/11/30
+     * @Param: []
+     * @Return: java.util.List<cn.blithe.ssm.pojo.Orders>
+     **/
     public List<Orders> queryOrdersList();
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 订单详情
+     * @Date: 2019/11/30
+     * @Param: [id]
+     * @Return: cn.blithe.ssm.pojo.Orders
+     **/
+    public Orders findById(String id);
 }

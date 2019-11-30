@@ -13,4 +13,13 @@ import java.util.List;
  **/
 public interface OrdersService {
     List<Orders> queryOrdersList(int page,int size) throws Exception;
+
+    /**
+     * @Author: nankexiansheng
+     * @Description: 订单详情
+     * @Date: 2019/11/30
+     * @Param: [id]
+     * @Return: cn.blithe.ssm.pojo.Orders
+     **/
+    Orders findById(String id);
 }

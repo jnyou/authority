@@ -1,6 +1,7 @@
 package cn.blithe.ssm.service.impl;
 
 import cn.blithe.ssm.dao.OrdersDao;
+import cn.blithe.ssm.dao.TravellerDao;
 import cn.blithe.ssm.pojo.Orders;
 import cn.blithe.ssm.service.OrdersService;
 import com.github.pagehelper.PageHelper;
@@ -31,6 +32,10 @@ public class OrdersServiceImpl implements OrdersService {
         return ordersDao.queryOrdersList();
     }
 
+    @Override
+    public Orders findById(String id) {
+        return ordersDao.findById(id);
+    }
 
 
 }

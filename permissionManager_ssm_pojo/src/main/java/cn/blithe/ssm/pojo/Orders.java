@@ -23,7 +23,7 @@ public class Orders {
     private Product product; //产品信息
     private List<Traveller> travellers;  //游客信息
     private Member member; //会员信息
-    private Integer payType;
+    private Integer payType;//支付方式(0 支付宝 1 微信 2其它)
     private String payTypeStr;
     private String orderDesc;
 
@@ -126,7 +126,15 @@ public class Orders {
         this.payType = payType;
     }
 
+    //支付方式(0 支付宝 1 微信 2其它)
     public String getPayTypeStr() {
+        if(payType == 0){
+            payTypeStr = "支付宝";
+        } else if(payType == 1){
+            payTypeStr = "微信";
+        }else{
+            payTypeStr="其它";
+        }
         return payTypeStr;
     }
 
