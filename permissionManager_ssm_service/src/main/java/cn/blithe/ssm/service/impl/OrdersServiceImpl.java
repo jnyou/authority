@@ -3,6 +3,7 @@ package cn.blithe.ssm.service.impl;
 import cn.blithe.ssm.dao.OrdersDao;
 import cn.blithe.ssm.pojo.Orders;
 import cn.blithe.ssm.service.OrdersService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +25,9 @@ public class OrdersServiceImpl implements OrdersService {
     private OrdersDao ordersDao;
 
     @Override
-    public List<Orders> queryOrdersList() {
+    public List<Orders> queryOrdersList(int page,int size) throws Exception{
+
+        PageHelper.startPage(page,size);
         return ordersDao.queryOrdersList();
     }
 

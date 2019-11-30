@@ -128,7 +128,7 @@ public class ProductController {
         }
     }
 
-    @RequestMapping("/edit")
+    @RequestMapping("/update")
     public String update(Product product) {
         Integer effectNum = productService.update(product);
         return "redirect:queryAll";

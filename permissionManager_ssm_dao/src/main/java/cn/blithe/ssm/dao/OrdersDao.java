@@ -18,7 +18,6 @@ import java.util.List;
  **/
 public interface OrdersDao {
 //    @Select("select o.*,p.productname,p.productprice from orders o,product p where o.productid=p.id")
-    @Select("select * from orders")
 //    @Results({
 //            @Result(id=true,property = "id",column = "id"),
 //            @Result(property = "orderNum",column = "orderNum"),

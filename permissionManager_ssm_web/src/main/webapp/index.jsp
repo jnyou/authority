@@ -2,6 +2,6 @@
          pageEncoding="UTF-8"%>
 <html>
 <body>
-<a href="${pageContext.request.contextPath}/product/queryAll">查询所有</a>
+<jsp:forward page="/pages/main.jsp"></jsp:forward>
 </body>
 </html>

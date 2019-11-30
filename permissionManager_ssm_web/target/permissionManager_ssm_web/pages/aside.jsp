@@ -28,7 +28,6 @@
 						class="fa fa-angle-left pull-right"></i>
 				</span>
 
-
 			</a>
 				<ul class="treeview-menu">
 
@@ -57,11 +56,11 @@
 				<ul class="treeview-menu">
 
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/product/findAll.do">
+						href="${pageContext.request.contextPath}/product/queryAll">
 							<i class="fa fa-circle-o"></i> 产品管理
 					</a></li>
 					<li id="system-setting"><a
-						href="${pageContext.request.contextPath}/orders/findAll.do?page=1&pageSize=3"> <i
+						href="${pageContext.request.contextPath}/orders/queryAll?page=1&size=5"> <i
 							class="fa fa-circle-o"></i> 订单管理
 					</a></li>
 

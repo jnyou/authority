@@ -12,5 +12,5 @@ import java.util.List;
  * @Version 1.0
  **/
 public interface OrdersService {
-    List<Orders> queryOrdersList();
+    List<Orders> queryOrdersList(int page,int size) throws Exception;
 }

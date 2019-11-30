@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.blithe.ssm.dao.OrdersDao">
+    <resultMap id="BaseRusultMap" type="cn.blithe.ssm.pojo.Orders">
+        <id column="id" property="id" jdbcType="VARCHAR"></id>
+        <result column="orderNum" property="orderNum" jdbcType="VARCHAR"></result>
+        <result column="orderTime" property="orderTime" jdbcType="TIMESTAMP"></result>
+        <result column="peopleCount" property="peopleCount" jdbcType="INTEGER"></result>
+        <result column="orderDesc" property="orderDesc" jdbcType="VARCHAR"></result>
+        <result column="payType" property="payType" jdbcType="INTEGER"></result>
+        <result column="orderStatus" property="orderStatus" jdbcType="INTEGER"></result>
+        <!-- 产品 -->
+        <association property="product" javaType="cn.blithe.ssm.pojo.Product">
+            <id column="id" property="id" jdbcType="VARCHAR"></id>
+            <result column="productNum" property="productNum" jdbcType="VARCHAR"></result>
+            <result column="productName" property="productName" jdbcType="VARCHAR"></result>
+            <result column="cityName" property="cityName" jdbcType="VARCHAR"></result>
+            <result column="departureTime" property="departureTime" jdbcType="TIMESTAMP"></result>
+            <result column="productPrice" property="productPrice" jdbcType="INTEGER"></result>
+            <result column="productDesc" property="productDesc" jdbcType="VARCHAR"></result>
+            <result column="productStatus" property="productStatus" jdbcType="INTEGER"></result>
+        </association>
+    </resultMap>
+
+    <select id="queryOrdersList" resultMap="BaseRusultMap">
+        select o.*,p.id as pid,p.productNum,p.productName,p.cityName,p.departureTime,p.productPrice,p.productDesc,p.productStatus
+         from orders o left join product p on o.productId=p.id
+    </select>
+</mapper>
