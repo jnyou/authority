@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.blithe.ssm.dao.UserDao">
+
+    <resultMap id="BaseResultMap" type="cn.blithe.ssm.pojo.UserInfo">
+        <id column="id" property="id" jdbcType="VARCHAR"></id>
+        <result column="username" property="username" jdbcType="VARCHAR"></result>
+        <result column="password" property="password" jdbcType="VARCHAR"></result>
+        <result column="email" property="email" jdbcType="VARCHAR"></result>
+        <result column="phoneNum" property="phoneNum" jdbcType="VARCHAR"></result>
+        <result column="status" property="status" jdbcType="INTEGER"></result>
+        <collection property="roles" resultMap="RolesResultMap"></collection>
+    </resultMap>
+
+    <resultMap id="RolesResultMap" type="cn.blithe.ssm.pojo.Role">
+        <id column="id" property="id" jdbcType="VARCHAR"></id>
+        <result column="roleName" property="roleName" jdbcType="VARCHAR"></result>
+        <result column="roleDesc" property="roleDesc" jdbcType="VARCHAR"></result>
+        <collection property="permissions" resultMap="PermissionsResultMap"></collection>
+        <collection property="users" resultMap="BaseResultMap"></collection>
+    </resultMap>
+
+    <select id="queryByUserName" resultType="cn.blithe.ssm.pojo.UserInfo">
+        select * from users where username = #{username}
+    </select>
+</mapper>

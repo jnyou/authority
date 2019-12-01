@@ -6,42 +6,37 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa7a61a-f288-4138-bf93-78615ec6613a" name="no changelist" comment="">
+    <list default="true" id="faa7a61a-f288-4138-bf93-78615ec6613a" name="no changelist" comment="no changelist">
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/src/main/java/cn/blithe/ssm/dao/RoleDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/src/main/java/cn/blithe/ssm/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper/RoleDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper/UserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/failer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_dao/target/classes/cn/blithe/ssm/dao/OrdersDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/target/classes/cn/blithe/ssm/dao/OrdersDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_dao/target/classes/cn/blithe/ssm/dao/ProductDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/target/classes/cn/blithe/ssm/dao/ProductDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/OrdersService.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/OrdersService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/ProductService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/impl/OrdersServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/impl/OrdersServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/target/classes/cn/blithe/ssm/service/impl/ProductServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/cn/blithe/ssm/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/cn/blithe/ssm/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/cn/blithe/ssm/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/cn/blithe/ssm/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/cn/blithe/ssm/controller/OrdersController.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/cn/blithe/ssm/controller/OrdersController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/cn/blithe/ssm/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/cn/blithe/ssm/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_pojo/src/main/java/cn/blithe/ssm/pojo/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_pojo/src/main/java/cn/blithe/ssm/pojo/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/product-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/product-add.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/spring-security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/spring-security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/spring-security.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_dao-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_pojo-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_service-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/lib/permissionManager_ssm_service-1.0-SNAPSHOT.jar" afterDir="false" />
-    </list>
-    <list id="aeb5c55a-e460-445c-ba25-895c24473fc4" name="delfault Changelist" comment="#订单列表查询及pagehelper分页插件使用">
-      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/src/main/java/cn/blithe/ssm/dao/TravellerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/TravellerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/impl/TravellerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper/TravellerDao.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-show.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_dao/src/main/java/cn/blithe/ssm/dao/OrdersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_dao/src/main/java/cn/blithe/ssm/dao/OrdersDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_pojo/src/main/java/cn/blithe/ssm/pojo/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_pojo/src/main/java/cn/blithe/ssm/pojo/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_pojo/target/classes/cn/blithe/ssm/pojo/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_pojo/target/classes/cn/blithe/ssm/pojo/Orders.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_service/src/main/java/cn/blithe/ssm/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/java/cn/blithe/ssm/controller/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/java/cn/blithe/ssm/controller/OrdersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper/OrdersDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper/OrdersDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages/orders-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/mapper/ProductDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/classes/mapper/ProductDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/mapper/ProductDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/classes/mapper/ProductDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/orders-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/orders-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/product-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/orders-show.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/orders-show.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/product-add.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/permissionManager_ssm_web/target/permissionManager_ssm_web/pages/product-add.jsp" afterDir="false" />
     </list>
+    <list id="aeb5c55a-e460-445c-ba25-895c24473fc4" name="delfault Changelist" comment="#订单列表查询及pagehelper分页插件使用" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,8 +53,8 @@
         <option value="package-info" />
         <option value="spring-beans.schema" />
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -90,7 +85,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/permissionManager_ssm_web/src/main/webapp/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/permissionManager_ssm_web/src/main/resources/mapper" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -104,11 +99,11 @@
       <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main\resources\mapper" />
+      <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main\webapp" />
       <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main\webapp\pages" />
       <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main\webapp\img" />
-      <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\main\resources\mapper" />
       <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_dao\src\main\java\cn\blithe\ssm\dao" />
-      <recent name="D:\IdeaProjects\permissionManager_ssm\permissionManager_ssm_web\src\resources" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -270,7 +265,7 @@
       <workItem from="1574488003436" duration="30869000" />
       <workItem from="1574644349141" duration="35563000" />
       <workItem from="1574906113938" duration="15188000" />
-      <workItem from="1575082250713" duration="21278000" />
+      <workItem from="1575082250713" duration="37131000" />
     </task>
     <task id="LOCAL-00001" summary="#产品开启屏蔽编辑修改">
       <created>1574932423496</created>

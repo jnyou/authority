@@ -15,7 +15,7 @@ public class UserInfo {
     private String email;
     private String password;
     private String phoneNum;
-    private int status;
+    private int status; // 状态0 未开启 1 开启
     private String statusStr;
     private List<Role> roles;
 

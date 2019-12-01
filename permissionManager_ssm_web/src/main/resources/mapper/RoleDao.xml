@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.blithe.ssm.dao.RoleDao">
+    <select id="queryRoleList" resultType="cn.blithe.ssm.pojo.Role">
+        select * from role where id in (select roleId from users_role where userId = #{userId})
+    </select>
+</mapper>
