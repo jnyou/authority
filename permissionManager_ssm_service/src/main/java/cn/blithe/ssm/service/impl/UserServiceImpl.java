@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
         // 处理自己的用户对象封装成UserDetails返回，通过UserDetails接口的一个User实现类来处理
         //User user = new User(userInfo.getUsername(),"{noop}"+userInfo.getPassword(),getAuthority(userInfo.getRoles()));
         // 状态0 未开启 1 开启  判断状态是否可用 未开启也是不能登陆成功的
-        User user = new User(userInfo.getUsername(),"{noop}"+userInfo.getPassword(),userInfo.getStatus()==0?false:true,true,true,true,getAuthority(userInfo.getRoles()));
+        User user = new User(userInfo.getUsername(),userInfo.getPassword(),userInfo.getStatus()==0?false:true,true,true,true,getAuthority(userInfo.getRoles()));
 
         return user;
 
