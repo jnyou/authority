@@ -9,18 +9,29 @@
         <result column="email" property="email" jdbcType="VARCHAR"></result>
         <result column="phoneNum" property="phoneNum" jdbcType="VARCHAR"></result>
         <result column="status" property="status" jdbcType="INTEGER"></result>
-        <collection property="roles" resultMap="RolesResultMap"></collection>
-    </resultMap>
-
-    <resultMap id="RolesResultMap" type="cn.blithe.ssm.pojo.Role">
-        <id column="id" property="id" jdbcType="VARCHAR"></id>
-        <result column="roleName" property="roleName" jdbcType="VARCHAR"></result>
-        <result column="roleDesc" property="roleDesc" jdbcType="VARCHAR"></result>
-        <collection property="permissions" resultMap="PermissionsResultMap"></collection>
-        <collection property="users" resultMap="BaseResultMap"></collection>
+        <collection property="roles" resultMap="RolesResultMap">
+            <id column="id" property="id" jdbcType="VARCHAR"></id>
+            <result column="roleName" property="roleName" jdbcType="VARCHAR"></result>
+            <result column="roleDesc" property="roleDesc" jdbcType="VARCHAR"></result>
+        </collection>
     </resultMap>
 
     <select id="queryByUserName" resultType="cn.blithe.ssm.pojo.UserInfo">
         select * from users where username = #{username}
+    </select>
+
+    <select id="queryAll" resultType="cn.blithe.ssm.pojo.UserInfo">
+        select * from users
+    </select>
+
+    <insert id="insert" parameterType="cn.blithe.ssm.pojo.UserInfo">
+        insert into
+        users(username,email,password,phoneNum,status)
+        values
+        (#{username},#{email},#{password},#{phoneNum},#{status})
+    </insert>
+
+    <select id="queryById" resultType="cn.blithe.ssm.pojo.UserInfo">
+        select * from users where id = #{id}
     </select>
 </mapper>

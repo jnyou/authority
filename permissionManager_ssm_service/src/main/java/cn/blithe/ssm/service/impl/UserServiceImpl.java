@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,6 +36,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RoleDao roleDao;
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -63,5 +67,22 @@ public class UserServiceImpl implements UserService {
             list.add(new SimpleGrantedAuthority("ROLE_" + role.getRoleName()));
         }
         return list;
+    }
+
+    @Override
+    public List<UserInfo> queryAll() {
+        return userDao.queryAll();
+    }
+
+    @Override
+    public void insert(UserInfo userInfo) {
+        // springsecurity密码加密
+        userInfo.setPassword(bCryptPasswordEncoder.encode(userInfo.getPassword()));
+        userDao.insert(userInfo);
+    }
+
+    @Override
+    public UserInfo queryById(String id) {
+        return userDao.queryById(id);
     }
 }

@@ -85,7 +85,7 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/user/findAll.do">用户管理</a></li>
+					href="${pageContext.request.contextPath}/user/queryAll">用户管理</a></li>
 
 				<li class="active">全部用户</li>
 			</ol>
@@ -154,7 +154,7 @@
 											<td>${user.phoneNum }</td>
 											<td>${user.statusStr }</td>											
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/user/findById.do?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
+												<a href="${pageContext.request.contextPath}/user/queryById?id=${user.id}" class="btn bg-olive btn-xs">详情</a>
 												<a href="${pageContext.request.contextPath}/user/findUserByIdAndAllRole.do?id=${user.id}" class="btn bg-olive btn-xs">添加角色</a>
 											</td>
 										</tr>
