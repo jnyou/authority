@@ -1,7 +1,9 @@
 package cn.blithe.ssm.controller;
 
+import cn.blithe.ssm.pojo.Permission;
 import cn.blithe.ssm.pojo.Role;
 import cn.blithe.ssm.pojo.UserInfo;
+import cn.blithe.ssm.service.PermissionService;
 import cn.blithe.ssm.service.RoleService;
 import cn.blithe.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class UserInfoController {
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    private PermissionService permissionService;
+
     @RequestMapping("/queryAll")
     public ModelAndView queryAll(){
         ModelAndView mv = new ModelAndView("user-list");
@@ -49,6 +54,10 @@ public class UserInfoController {
         UserInfo userInfo = userService.queryById(id);
         List<Role> roles = roleService.queryRoleList(id);
         userInfo.setRoles(roles);
+        for (Role role : roles) {
+            List<Permission> permissions = permissionService.queryPermissionByRoleId(role.getId());
+            role.setPermissions(permissions);
+        }
         mv.addObject("user",userInfo);
         return mv;
     }

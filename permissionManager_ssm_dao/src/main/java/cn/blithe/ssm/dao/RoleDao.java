@@ -20,4 +20,10 @@ public interface RoleDao {
      * @Return: java.util.List<cn.blithe.ssm.pojo.Role>
      **/
     public List<Role> queryRoleList(String userId);
+
+    public List<Role> queryAll();
+
+    public void save(Role role);
+
+    public Role queryRoleByRoleId(String roleId);
 }

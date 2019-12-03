@@ -84,13 +84,13 @@
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
-				<li><a href="${pageContext.request.contextPath}/permission/findAll.do">资源权限管理</a></li>
+				<li><a href="${pageContext.request.contextPath}/permission/queryAll">资源权限管理</a></li>
 				<li class="active">资源权限表单</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/permission/save.do"
+			<form action="${pageContext.request.contextPath}/permission/save"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -104,7 +104,7 @@
 							<input type="text" class="form-control" name="permissionName"
 								placeholder="权限名称" value="">
 						</div>
-						<div class="col-md-2 title">RUL</div>
+						<div class="col-md-2 title">URL</div>
 						<div class="col-md-4 data">
 							<input type="text" class="form-control" name="url"
 								placeholder="URL" value="">
@@ -131,7 +131,7 @@
 			<b>Version</b> 1.0.8
 		</div>
 		<strong>Copyright &copy; 2014-2017 <a
-			href="http://www.itcast.cn">研究院研发部</a>.
+			href="http://www.baidu.com">研究院研发部</a>.
 		</strong> All rights reserved. </footer>
 		<!-- 底部导航 /-->
 

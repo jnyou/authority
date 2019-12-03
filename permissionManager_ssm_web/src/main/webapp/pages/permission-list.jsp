@@ -150,8 +150,8 @@
 											<td>${p.permissionName }</td>
 											<td>${p.url }</td>
 											<td class="text-center">
-												<a href="${pageContext.request.contextPath}/permission/findById.do?id=${p.id}" class="btn bg-olive btn-xs">详情</a>
-												<a href="${pageContext.request.contextPath}/permission/deletePermission.do?id=${p.id}" class="btn bg-olive btn-xs">删除权限</a>
+												<a href="${pageContext.request.contextPath}/permission/queryById?id=${p.id}" class="btn bg-olive btn-xs">详情</a>
+												<a href="${pageContext.request.contextPath}/permission/delete?id=${p.id}" class="btn bg-olive btn-xs">删除权限</a>
 											</td>
 										</tr>
 									</c:forEach>
@@ -221,7 +221,7 @@
 				<b>Version</b> 1.0.8
 			</div>
 			<strong>Copyright &copy; 2014-2017 <a
-				href="http://www.itcast.cn">研究院研发部</a>.
+				href="http://www.baidu.com">研究院研发部</a>.
 			</strong> All rights reserved. </footer>
 			<!-- 底部导航 /-->
 

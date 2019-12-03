@@ -85,7 +85,7 @@
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
 				<li><a
-					href="${pageContext.request.contextPath}/product/findAll.do">产品管理</a></li>
+					href="${pageContext.request.contextPath}/product/queryAll">产品管理</a></li>
 				<li class="active">产品表单</li>
 			</ol>
 			</section>

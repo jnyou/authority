@@ -4,4 +4,16 @@
     <select id="queryRoleList" resultType="cn.blithe.ssm.pojo.Role">
         select * from role where id in (select roleId from users_role where userId = #{userId})
     </select>
+
+    <select id="queryAll" resultType="cn.blithe.ssm.pojo.Role">
+        select * from role
+    </select>
+
+    <insert id="save" parameterType="cn.blithe.ssm.pojo.Role">
+        insert into role (roleName,roleDesc) values(#{roleName},#{roleDesc})
+    </insert>
+
+    <select id="queryRoleByRoleId" resultType="cn.blithe.ssm.pojo.Role">
+        select * from role where id = #{roleId}
+    </select>
 </mapper>

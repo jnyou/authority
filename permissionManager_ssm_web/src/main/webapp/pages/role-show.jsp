@@ -79,14 +79,14 @@
         <!-- 内容头部 -->
         <section class="content-header">
             <h1>
-                权限管理
+                角色管理
                 <small>全部用户</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="${pageContext.request.contextPath}/index.jsp"><i
                         class="fa fa-dashboard"></i> 首页</a></li>
                 <li><a
-                        href="${pageContext.request.contextPath}/permission/queryAll">权限管理</a></li>
+                        href="${pageContext.request.contextPath}/role/queryAll">角色管理</a></li>
 
                 <li class="active">全部用户</li>
             </ol>
@@ -139,11 +139,17 @@
                                 </tr>
                                 </thead>
                                 <tr data-tt-id="0">
-                                    <td>${permission.permissionName}</td>
-                                    <td>${permission.url}</td>
+                                    <td colspan="2">${role.roleName}</td>
                                 </tr>
 
-
+                                <tbody>
+                                <c:forEach items="${role.permissions}" var="permission" varStatus="vs1">
+                                    <tr data-tt-id="${vs1.index+1}" data-tt-parent-id="0">
+                                        <td>${permission.permissionName }</td>
+                                        <td>${permission.url }</td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <!--数据列表/-->
@@ -200,7 +206,7 @@
             <b>Version</b> 1.0.8
         </div>
         <strong>Copyright &copy; 2014-2017 <a
-                href="http://www.baidu.com">研究院研发部</a>.
+                href="http://www.itcast.cn">研究院研发部</a>.
         </strong> All rights reserved.
     </footer>
     <!-- 底部导航 /-->

@@ -84,13 +84,13 @@
 			<ol class="breadcrumb">
 				<li><a href="${pageContext.request.contextPath}/index.jsp"><i
 						class="fa fa-dashboard"></i> 首页</a></li>
-				<li><a href="${pageContext.request.contextPath}/role/findAll.do">角色管理</a></li>
+				<li><a href="${pageContext.request.contextPath}/role/queryAll">角色管理</a></li>
 				<li class="active">角色表单</li>
 			</ol>
 			</section>
 			<!-- 内容头部 /-->
 
-			<form action="${pageContext.request.contextPath}/role/save.do"
+			<form action="${pageContext.request.contextPath}/role/save"
 				method="post">
 				<!-- 正文区域 -->
 				<section class="content"> <!--产品信息-->
@@ -131,7 +131,7 @@
 			<b>Version</b> 1.0.8
 		</div>
 		<strong>Copyright &copy; 2014-2017 <a
-			href="http://www.itcast.cn">研究院研发部</a>.
+			href="http://www.baidu.com">研究院研发部</a>.
 		</strong> All rights reserved. </footer>
 		<!-- 底部导航 /-->
 

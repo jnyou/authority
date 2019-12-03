@@ -13,4 +13,10 @@ import java.util.List;
  **/
 public interface RoleService {
     public List<Role> queryRoleList(String userId);
+
+    public List<Role> queryAll();
+
+    public void save(Role role);
+
+    public Role queryRoleByRoleId(String roleId);
 }

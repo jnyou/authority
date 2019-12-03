@@ -27,4 +27,19 @@ public class RoleServiceImpl implements RoleService {
     public List<Role> queryRoleList(String userId) {
         return roleDao.queryRoleList(userId);
     }
+
+    @Override
+    public List<Role> queryAll() {
+        return roleDao.queryAll();
+    }
+
+    @Override
+    public void save(Role role) {
+        roleDao.save(role);
+    }
+
+    @Override
+    public Role queryRoleByRoleId(String roleId) {
+        return roleDao.queryRoleByRoleId(roleId);
+    }
 }
