@@ -3,6 +3,7 @@ package cn.blithe.ssm.service.impl;
 import cn.blithe.ssm.dao.ProductDao;
 import cn.blithe.ssm.pojo.Product;
 import cn.blithe.ssm.service.ProductService;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -26,7 +27,8 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public List<Product> queryProductList() throws Exception {
+    public List<Product> queryProductList(int page,int size) throws Exception {
+        PageHelper.startPage(page,size);
         return productDao.queryProductList();
     }
 

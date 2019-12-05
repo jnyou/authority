@@ -22,7 +22,7 @@ public interface ProductService {
      * @Param: []
      * @Return: java.util.List<cn.blithe.ssm.pojo.Product>
      **/
-    List<Product> queryProductList() throws Exception;
+    List<Product> queryProductList(int page,int size) throws Exception;
 
     /**
      * @Author: nankexiansheng

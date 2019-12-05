@@ -217,7 +217,7 @@
 								<div class="has-feedback">
 									<input type="text" class="form-control input-sm"
 										placeholder="搜索"> <span
-										class="glyphicon glyphicon-search form-control-feedback"></span>
+										class="glyphicon glyphicon-search form-control-feedback" onclick="search();"></span>
 								</div>
 							</div>
 							<!--工具栏/-->
@@ -296,9 +296,9 @@
 							</div>
 							<div class="box-tools pull-right">
 								<div class="has-feedback">
-									<input type="text" class="form-control input-sm"
-										placeholder="搜索"> <span
-										class="glyphicon glyphicon-search form-control-feedback"></span>
+									<input type="text" id="serachText" class="form-control input-sm"
+										placeholder="搜索"> <button
+										class="glyphicon glyphicon-search form-control-feedback"></button>
 								</div>
 							</div>
 							<!--工具栏/-->
@@ -459,6 +459,29 @@
 	<script
 		src="${pageContext.request.contextPath}/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>
 	<script>
+
+		function search() {
+			var serachText = $('#serachText').val();
+			var page = '1';
+			var size = '3';
+			$.ajax({
+				url:'${pageContext.request.contextPath}/orders/queryAll',
+				type:'POST',
+				data:{
+					serachText :serachText,
+					page : page,
+					size : size
+				},
+				success:function(data){
+					if(data=="ok"){
+						alert('开启数据成功');
+						//删除成功后，调用action方法刷新页面信息
+						location.reload();
+					}
+				}
+			});
+		}
+
 		function changePageSize() {
 			//获取下拉框的值
 			var pageSize = $("#changePageSize").val();

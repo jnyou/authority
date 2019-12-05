@@ -34,7 +34,7 @@ public class OrdersController {
     private TravellerService travellerService;
 
     @RequestMapping("/queryAll")
-    public ModelAndView queryOrders(@RequestParam(name="page",required = true,defaultValue = "1") int page,@RequestParam(name="size",required = true,defaultValue = "4") int size) throws Exception {
+    public ModelAndView queryOrders(int page,int size,String parmes) throws Exception {
         ModelAndView mav = new ModelAndView();
         List<Orders> orders = ordersService.queryOrdersList(page,size);
         // pageinfo就是一分页bean

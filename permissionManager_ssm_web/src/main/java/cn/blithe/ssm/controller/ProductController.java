@@ -2,13 +2,11 @@ package cn.blithe.ssm.controller;
 
 import cn.blithe.ssm.pojo.Product;
 import cn.blithe.ssm.service.ProductService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -37,10 +35,11 @@ public class ProductController {
      * @Return: org.springframework.web.servlet.ModelAndView
      **/
     @RequestMapping(value = "/queryAll")
-    public ModelAndView queryAllProduct() throws Exception {
+    public ModelAndView queryAllProduct(@RequestParam("page") int page,@RequestParam("size") int size) throws Exception {
         ModelAndView model = new ModelAndView();
-        List<Product> products = productService.queryProductList();
-        model.addObject("productList", products);
+        List<Product> products = productService.queryProductList(page, size);
+        PageInfo pageInfo = new PageInfo(products);
+        model.addObject("pageInfo", pageInfo);
         model.setViewName("product-list");
         return model;
     }

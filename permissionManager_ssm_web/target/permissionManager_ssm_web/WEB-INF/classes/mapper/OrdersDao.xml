@@ -54,7 +54,13 @@
 
     <select id="queryOrdersList" resultMap="BaseRusultMap">
         select o.*,p.id as pid,p.productNum,p.productName,p.cityName,p.departureTime,p.productPrice,p.productDesc,p.productStatus
-         from orders o left join product p on o.productId=p.id
+         from
+         orders o left join product p on o.productId=p.id
+         <if test="product != null">
+             <if test="product.productName != null and product.productName.trim()!='' ">
+                 and p.productName = #{product.productName}
+             </if>
+         </if>
     </select>
 
     <select id="findById" resultMap="BaseRusultMapCont">
