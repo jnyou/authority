@@ -29,6 +29,22 @@ public class RoleController {
     @Autowired
     private PermissionDao permissionDao;
 
+    @RequestMapping("/saveBatchPermissionAndRole")
+    public String saveBatchPermissionAndRole(@RequestParam(value = "roleId",required = true) String roleId,@RequestParam(value = "ids",required = true) String [] permissionId){
+        roleService.saveBatchPermissionAndRole(roleId,permissionId);
+        return "redirect:queryAll";
+    }
+
+    @RequestMapping("/queryRoleAndPermission")
+    public ModelAndView queryRoleAndPermission(@RequestParam(value = "id",required = true) String roleId){
+        ModelAndView mv = new ModelAndView("role-permission-add");
+        Role role = roleService.queryRoleByRoleId(roleId);
+        List<Permission> permissions = permissionDao.queryPermissionToUse(roleId);
+        mv.addObject("role",role);
+        mv.addObject("permissionList",permissions);
+        return mv;
+    }
+
     @RequestMapping("/queryAll")
     public ModelAndView queryAll(){
         ModelAndView mv = new ModelAndView("role-list");

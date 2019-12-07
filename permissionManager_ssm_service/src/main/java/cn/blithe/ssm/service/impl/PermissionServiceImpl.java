@@ -47,4 +47,9 @@ public class PermissionServiceImpl implements PermissionService {
     public void delete(String pid) {
         permissionDao.delete(pid);
     }
+
+    @Override
+    public List<Permission> queryPermissionToUse(String roleId) {
+        return permissionDao.queryPermissionToUse(roleId);
+    }
 }

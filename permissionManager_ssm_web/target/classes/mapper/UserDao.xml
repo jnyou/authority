@@ -34,4 +34,8 @@
     <select id="queryById" resultType="cn.blithe.ssm.pojo.UserInfo">
         select * from users where id = #{id}
     </select>
+
+    <insert id="saveRoles">
+        insert into users_role(userId,roleId) values(#{userId},#{roleId})
+    </insert>
 </mapper>

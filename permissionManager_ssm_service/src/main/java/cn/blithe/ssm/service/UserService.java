@@ -19,4 +19,6 @@ public interface UserService extends UserDetailsService {
     public void insert(UserInfo userInfo);
 
     public UserInfo queryById(String id);
+
+    public void saveRoles(String userId, String [] roleIds);
 }

@@ -42,4 +42,17 @@ public class RoleServiceImpl implements RoleService {
     public Role queryRoleByRoleId(String roleId) {
         return roleDao.queryRoleByRoleId(roleId);
     }
+
+    @Override
+    public List<Role> queryNotRoleList(String userId) {
+        return roleDao.queryNotRoleList(userId);
+    }
+
+    @Override
+    public void saveBatchPermissionAndRole(String roleId, String[] permissionIds) {
+        for (String permissionId : permissionIds) {
+            roleDao.saveBatchPermissionAndRole(roleId,permissionId);
+        }
+    }
+
 }

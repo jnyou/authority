@@ -7,6 +7,7 @@ import cn.blithe.ssm.service.OrdersService;
 import cn.blithe.ssm.service.TravellerService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,6 +35,7 @@ public class OrdersController {
     private TravellerService travellerService;
 
     @RequestMapping("/queryAll")
+    @Secured("ROLE_ADMIN")   // Secured注解，不能省略ROLE_前缀
     public ModelAndView queryOrders(int page,int size,String parmes) throws Exception {
         ModelAndView mav = new ModelAndView();
         List<Orders> orders = ordersService.queryOrdersList(page,size);

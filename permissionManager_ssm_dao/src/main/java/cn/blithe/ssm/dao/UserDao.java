@@ -1,6 +1,7 @@
 package cn.blithe.ssm.dao;
 
 import cn.blithe.ssm.pojo.UserInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -48,4 +49,6 @@ public interface UserDao {
      * @Return: cn.blithe.ssm.pojo.UserInfo
      **/
     public UserInfo queryById(String id);
+
+    public void saveRoles(@Param("userId") String userId,@Param("roleId") String roleId);
 }

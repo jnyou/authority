@@ -19,4 +19,8 @@ public interface RoleService {
     public void save(Role role);
 
     public Role queryRoleByRoleId(String roleId);
+
+    public List<Role> queryNotRoleList(String userId);
+
+    public void saveBatchPermissionAndRole(String roleId,String [] permissionIds);
 }

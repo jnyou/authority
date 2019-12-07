@@ -16,4 +16,13 @@
     <select id="queryRoleByRoleId" resultType="cn.blithe.ssm.pojo.Role">
         select * from role where id = #{roleId}
     </select>
+
+    <select id="queryNotRoleList" resultType="cn.blithe.ssm.pojo.Role">
+        select * from role where id not in (select roleId from users_role where userId = #{userId})
+    </select>
+
+    <insert id="saveBatchPermissionAndRole">
+        insert into role_permission(roleId,permissionId) values (#{roleId},#{permissionId})
+
+    </insert>
 </mapper>

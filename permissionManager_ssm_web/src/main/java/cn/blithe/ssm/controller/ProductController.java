@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.security.RolesAllowed;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,7 @@ public class ProductController {
      * @Return: org.springframework.web.servlet.ModelAndView
      **/
     @RequestMapping(value = "/queryAll")
+    @RolesAllowed("ADMIN")  //只有admin权限的用户才能访问这个方法
     public ModelAndView queryAllProduct(@RequestParam("page") int page,@RequestParam("size") int size) throws Exception {
         ModelAndView model = new ModelAndView();
         List<Product> products = productService.queryProductList(page, size);

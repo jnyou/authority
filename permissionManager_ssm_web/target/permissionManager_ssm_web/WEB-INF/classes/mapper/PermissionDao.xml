@@ -21,4 +21,8 @@
     <delete id="delete">
         delete from permission where id = #{pid}
     </delete>
+
+    <select id="queryPermissionToUse" resultType="cn.blithe.ssm.pojo.Permission">
+        select * from permission where id not in (select permissionId from role_permission where roleId=#{roleId})
+    </select>
 </mapper>

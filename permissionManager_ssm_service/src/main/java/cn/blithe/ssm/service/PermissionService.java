@@ -22,4 +22,6 @@ public interface PermissionService {
     public Permission queryById(String pid);
 
     public void delete(String pid);
+
+    public List<Permission> queryPermissionToUse(String roleId);
 }

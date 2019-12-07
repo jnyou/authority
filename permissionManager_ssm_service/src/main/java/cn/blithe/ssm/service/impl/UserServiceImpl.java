@@ -85,4 +85,11 @@ public class UserServiceImpl implements UserService {
     public UserInfo queryById(String id) {
         return userDao.queryById(id);
     }
+
+    @Override
+    public void saveRoles(String userId, String [] roleIds) {
+        for (String roleId : roleIds) {
+            userDao.saveRoles(userId,roleId);
+        }
+    }
 }
