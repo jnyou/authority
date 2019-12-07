@@ -36,7 +36,7 @@ public class OrdersController {
 
     @RequestMapping("/queryAll")
     @Secured("ROLE_ADMIN")   // Secured注解，不能省略ROLE_前缀
-    public ModelAndView queryOrders(int page,int size,String parmes) throws Exception {
+    public ModelAndView queryOrders(@RequestParam(value = "page",defaultValue = "1") Integer page,@RequestParam(value = "size",defaultValue = "4") Integer size) throws Exception {
         ModelAndView mav = new ModelAndView();
         List<Orders> orders = ordersService.queryOrdersList(page,size);
         // pageinfo就是一分页bean

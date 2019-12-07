@@ -37,7 +37,7 @@ public class ProductController {
      **/
     @RequestMapping(value = "/queryAll")
     @RolesAllowed("ADMIN")  //只有admin权限的用户才能访问这个方法
-    public ModelAndView queryAllProduct(@RequestParam("page") int page,@RequestParam("size") int size) throws Exception {
+    public ModelAndView queryAllProduct(@RequestParam("page") Integer page,@RequestParam("size") Integer size) throws Exception {
         ModelAndView model = new ModelAndView();
         List<Product> products = productService.queryProductList(page, size);
         PageInfo pageInfo = new PageInfo(products);

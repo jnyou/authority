@@ -1,5 +1,7 @@
 package cn.blithe.ssm.pojo;
 
+import cn.blithe.ssm.utils.DateUtils;
+
 import java.util.Date;
 /**
  * @Author: nankexiansheng
@@ -35,6 +37,9 @@ public class SysLog {
     }
 
     public String getVisitTimeStr() {
+        if(visitTime != null){
+            visitTimeStr = DateUtils.date2String(visitTime,"yyyy-MM-dd HH:mm:ss");
+        }
         return visitTimeStr;
     }
 
